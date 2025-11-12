@@ -1,0 +1,113 @@
+.services {
+  position: relative;
+  padding: 8rem 2rem;
+  background-color: white;
+  color: var(--text, #fff);
+  text-align: center;
+
+  &__container {
+    max-width: 120rem;
+    margin: 0 auto;
+  }
+
+  &__header {
+    margin-bottom: 6rem;
+  }
+
+  &__tagline{
+    width: 60%;
+    background-color: blue;
+  }
+
+  &__title {
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  &__subtitle {
+    font-size: 1.6rem;
+    color: var(--primary);
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+    gap: 3rem;
+
+    @media only screen and (max-width:56.25em) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+     @media only screen and (max-width:37.5em) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    background-color: var(--shadow-4);
+    border-radius: 1.2rem;
+    padding: 3rem 2rem;
+    transition: all 0.3s ease;
+    cursor: default;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    &:hover {
+      box-shadow: 0 15px 30px rgba(79, 70, 229, 0.9);
+      transform: translateY(-5px);
+
+      .services__icon-wrapper {
+        background: linear-gradient(135deg, rgb(79, 70, 229), rgb(109, 40, 217));
+        color: #fff;
+      }
+    }
+  }
+
+  &__icon-wrapper {
+    width: 6rem;
+    height: 6rem;
+    margin: 0 auto 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+  }
+
+  &__icon {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  &__heading {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text, #fff);
+  }
+
+  &__description {
+    font-size: 1.5rem;
+    color: var(--primary);
+    line-height: 1.6;
+  }
+
+  // Responsive
+  @media (max-width: 600px) {
+    padding: 6rem 1.5rem;
+
+    &__title {
+      font-size: 2.4rem;
+    }
+
+    &__grid {
+      gap: 2rem;
+    }
+
+    &__item {
+      padding: 2rem;
+    }
+  }
+}
+

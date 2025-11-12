@@ -1,0 +1,112 @@
+.footer {
+  background: var(--primary);
+  color: white;
+  padding: 6rem 0 2rem;
+}
+
+.footer__container {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  row-gap: 3.8rem;
+  margin-bottom: 3rem;
+
+  @media only screen and (max-width:50em) {
+   grid-template-columns:repeat(2,1fr);
+}
+
+ @media only screen and (max-width:37.5em) {
+          grid-template-columns:1fr;
+        }
+}
+
+.footer__title {
+  color: #fff;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.footer__description {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: #bbb;
+}
+
+.footer__cta {
+  display: inline-block;
+  background-color: var(--secondary);
+  color: var(--primary);
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.4s ease;
+  box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+}
+
+.footer__cta:hover {
+  background: var(--primary);
+   color: var(--secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.3); /* Subtle glow */
+}
+
+
+.footer__subtitle {
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+.footer__links ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer__links{
+    display: grid;
+    justify-self: center;
+
+     @media only screen and (max-width:37.5em) {
+          justify-self: start;
+        }
+}
+
+.footer__link {
+  color: #ccc;
+  transition: color 0.3s ease;
+  text-decoration: none;
+  list-style: none;
+}
+.footer__link:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.footer__icons {
+  display: flex;
+  gap: 1.2rem;
+}
+.footer__icon svg {
+  width: 54px;
+  height: 54px;
+  color: #ccc!important;
+  transition: all 0.3s ease;
+  animation: float 3s ease-in-out infinite;
+}
+.footer__icon:hover svg {
+  stroke: var(--secondary-bg);
+  transform: scale(1.4)!important;
+}
+
+.footer__bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 1.2rem;
+  @media only screen and (max-width:31.25em) {
+          padding: 0 1rem
+        }
+}
