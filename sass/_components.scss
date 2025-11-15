@@ -1108,21 +1108,36 @@
   }
 }
 
+.section-contact-info{
+    padding: 9rem 0;
+    background-color: var(--highlight);
+    color: var(--text, #fff);
+    text-align: center;
+}
+
 .contact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(10rem,1fr));
-    grid-gap: 3rem;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    column-gap: 4.5rem;
     margin-top: 10rem;
     margin-bottom: 10rem;
 
       @media only screen and (max-width:43.75em) {
            grid-template-columns: 1fr;
-          padding: 0 3rem;  
+           row-gap: 5rem;
+          padding: 0 2rem;  
           margin-top: 5rem;
            margin-bottom: 5rem;
-
         }
-   
+
+        @media only screen and (max-width:25em) {
+           grid-template-columns: 1fr;
+           row-gap: 5rem;
+          padding: 0 2rem;  
+          margin-top: 5rem;
+           margin-bottom: 5rem;
+        }
 
   .contact-card {
     background: var(--shadow-4);
@@ -1131,7 +1146,12 @@
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
     overflow: hidden;
-     box-shadow: 0 5px 10px rgba(79, 70, 229, 0.9);
+
+   
+    @media only screen and (max-width:25em) {
+      padding: 2rem .8rem;
+        }
+
      
     p{
       margin-bottom: 1rem;
@@ -1173,14 +1193,123 @@
         }
       }
     }
+
+
+    .contact-right-grid{
+      display: flex;
+      flex-direction: column;
+      gap: 3.5rem;
+    }
+
+    /* ===============================
+   CONTACT FORM SECTION
+    ================================*/
+.contact-label {
+  display: block;
+  margin-bottom: .8rem;
+  font-weight: 600;
+}
+
+.contact-input,
+.contact-textarea {
+  width: 100%;
+  padding: 1.2rem;
+  border: 1px solid var(--shadow-2);
+  border-radius: 6px;
+  font-size: 1.6rem;
+  font-family: var(--font-body);
+  margin-bottom: 2rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+   @media only screen and (max-width: 31.25em) {
+          padding: 2rem;
+         }
+}
+
+.contact-input:focus,
+.contact-textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 5px rgba(30, 42, 56, 0.5);
+}
+
+
+/* Wrapper div for each field */
+.contact-form div {
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+
+/* Placing the label OVER the input ! Very important! esle it wont work */
+.contact-label {
+  position: absolute;
+  left: 1.2rem;
+  top: 1.4rem;
+  background: transparent;
+  pointer-events: none;
+  transition: 0.25s ease;
+  margin-bottom: 0; /* overrides the margin since label floats */
+}
+
+/* When focused OR filled → float the label */
+.contact-input:focus + .contact-label,
+.contact-textarea:focus + .contact-label,
+.contact-input:not(:placeholder-shown) + .contact-label,
+.contact-textarea:not(:placeholder-shown) + .contact-label {
+  top: -0.8rem;
+  left: 0.8rem;
+  font-size: 1.6rem;
+  border-radius: 6px;
+  color: var(--primary);
+  background: white;
+  padding: 0 .9rem;
+}
+
+
+.contact-input::placeholder,
+.contact-textarea::placeholder {
+  opacity: 0;
+}
+
+.contact-btn{
+  text-transform: capitalize;
+  border: none;
+  font-family: var(--font-body);
+   font-size: clamp(1.6rem, 1.3vw, 1.2rem);
+  padding: 1.4rem 3rem;
+  border-radius: 9px; 
+  font-weight: 600;
+   text-decoration: none;
+  transition: all .3s ease;
+   background-color: var(--primary);
+   color: var(--secondary);
+  display: grid;
+  justify-self: start;
+   box-shadow: 0 10px 12px rgba(0, 0, 0, 0.9);
+
+    @media only screen and (max-width:43.75em) {
+          display: grid;
+           justify-self: center;
+        }
+      
+     &:hover{
+    color: #1e2a38!important;
+    background-color: white!important;
+     transform: translateY(4px); 
+   
+     
   }
+}
 
+}
 
+/* ===============================
+   CTA  SECTION
+    ================================*/
 .contact-cta {
   background: var(--primary);
   color: var(--secondary);
   text-align: center;
-  // padding: 6rem 2rem;
    position: relative;
 
   
