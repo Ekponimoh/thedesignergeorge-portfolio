@@ -42,7 +42,7 @@
 <section class="contact-hero" id="contact-hero" aria-label="contact Overview">
   <div class="contact-hero__content container">
     <h1 class="heading-1 fade-text">Let’s Build Something Great</h1>
-    <p class=" hero__tagline  fade-text delay-1">Have a project in mind or just want to say hi?  
+    <p class=" hero__tagline fade-text delay-1">Have a project in mind or just want to say hi?  
       I’m always open to discussing new ideas, creative collaborations, or freelance opportunities.</p>
     <!-- <a href="contact.html" class="btn btn--primary  fade-text delay-2">Start Your Project</a> -->
   </div>
@@ -54,16 +54,60 @@
   <section class="section-contact-info" aria-label="Contact Information Section">
    <div class="contact-grid container">
     
-    <!-- Left: Email Card -->
-    <div class="contact-card email fade-left stagger" style=" padding: 4rem; display: flex; flex-direction: column; gap: 2rem;">
-      <h2>Let’s Connect</h2>
-      <p>Have a project or idea? Reach me directly by email.</p>
+    <!-- Left: form -->
+    <div class="contact-card form rise stagger" style=" padding: 4.5rem; display: flex; flex-direction: column; gap: 2rem;">
+        <h2 class="heading-2">Send Me a Message</h2>
+        <p style="text-align: center;">Have a question or want to work together? Fill out the form below.</p>
+       <form name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true" netlify-honeypot="bot-field" class="contact-form" id="contact-form">
+
+  <!-- Hidden required fields -->
+  <input type="hidden" name="form-name" value="contact">
+
+  <!-- Honeypot to catch bots -->
+  <p style="display:none;">
+    <label>Don’t fill this out: <input name="bot-field" /></label>
+  </p>
+
+  <div>
+    <input type="text" id="name" name="name" class="contact-input" placeholder="Name" required>
+    <label for="name" class="contact-label">Name</label>
+  </div>
+
+  <div>
+    <input type="email" id="email" name="email" class="contact-input" placeholder="you@example.com" required>
+    <label for="email" class="contact-label">Email</label>
+  </div>
+
+  <div>
+    <textarea id="message" name="message" class="contact-textarea" rows="5" placeholder="Your message 💌" required></textarea>
+    <label for="message" class="contact-label">Message</label>
+  </div>
+
+  <!-- reCAPTCHA -->
+  <div data-netlify-recaptcha="true"></div>
+
+  <button type="submit" class="btn btn--primary contact-btn" style="padding: 1.3rem 3rem;">Send Message</button>
+
+  <!-- Success message (JS-controlled) -->
+  <p id="form-status" style="margin-top:1rem; display:none; color:lime;">Message sent successfully! 🎉</p>
+  <p id="form-error" style="margin-top:1rem; display:none; color:red;">Oops! Something went wrong.</p>
+</form>
+
+    </div>
+  
+
+    <!-- Right: Social Icons and  Email Card  -->
+     
+     <div class="contact-right-grid">
+       <!-- Email card --> 
+       <div class="contact-card email fade-right stagger" style=" padding: 4rem; display: flex; flex-direction: column; gap: 2rem;">
+         <h2 class="heading-2">Let’s Connect</h2>
+         <p>Have a project or idea? Reach me directly by email.</p>
         <a href="mailto:thedesignergeorge1@gmail.com" class="btn btn--primary cta__btn" style="text-transform: none; align-self: center;">thedesignergeorge1@gmail.com</a>   
     </div>
-
-    <!-- Right: Social Icons -->
+     <!-- Social Icons -->
     <div class="contact-card socials fade-right stagger" style=" padding: 4rem; display: flex; flex-direction: column; gap: 2rem;">
-      <h2>Follow Me</h2>
+      <h2 class="heading-2">My socials</h2>
       <p>Let’s stay connected on social media.</p>
       <div class="social-icons">
        <!-- Instagram -->
@@ -75,7 +119,7 @@
   <a href="https://x.com/Designer9George?t=rv6NXIWPogN8WLgYVXlGHw&s=09" aria-label="Twitter" ">
     <ion-icon name="logo-twitter" class="contact-icon"></ion-icon>
   </a>
-
+  
   <!-- WhatsApp -->
   <a href="https://wa.me/message/DMPLYY3TTEASB1" aria-label="WhatsApp" class="footer__icon icon">
    <ion-icon name="logo-whatsapp"  class="contact-icon"></ion-icon>
@@ -85,20 +129,21 @@
   <a href="https://www.linkedin.com/in/kenneth-george-b19798262?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" aria-label="LinkedIn">
     <ion-icon name="logo-linkedin" class="contact-icon"></ion-icon>
   </a>
-
+  
   <!-- TikTok -->
   <a href="https://www.tiktok.com/@the.designer.george01?_r=1&_d=eh5lgba680d641&sec_uid=MS4wLjABAAAAC2H6PDwPHzyGMpaeqWITP9v77IhGUxFt92voqgLgl9rH6A71uk3o4fZECyZFlrvK&share_author_id=7553922115206153224&sharer_language=en&source=h5_m&u_code=emg12gl7kl421h&timestamp=1762540901&user_id=7553922115206153224&sec_user_id=MS4wLjABAAAAC2H6PDwPHzyGMpaeqWITP9v77IhGUxFt92voqgLgl9rH6A71uk3o4fZECyZFlrvK&item_author_type=1&utm_source=whatsapp_business&utm_campaign=client_share&utm_medium=android&share_iid=7568948920425039628&share_link_id=09dc1b9c-a336-4ca6-a1dd-f84a1b92df31&share_app_id=1233&ugbiz_name=ACCOUNT&ug_btm=b8727%2Cb4907&social_share_type=5&enable_checksum=1" aria-label="TikTok" class="footer__icon icon">
-      <ion-icon name="logo-tiktok" class="contact-icon"></ion-icon>
+    <ion-icon name="logo-tiktok" class="contact-icon"></ion-icon>
   </a>
-
+  
   <!-- GitHub -->
   <a href="https://github.com/Ekponimoh" aria-label="GitHub" >
     <ion-icon name="logo-github" class="contact-icon"></ion-icon>
   </a>
-      </div>
+</div>
       <!--  -->
     </div>
   </div>
+</div>
   </section>
   <!-- SECTION-CONTACT INFO ENDS -->
 
