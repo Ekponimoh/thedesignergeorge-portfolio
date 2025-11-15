@@ -5,19 +5,12 @@
   color: var(--text, #fff);
   text-align: center;
 
-  &__container {
-    max-width: 120rem;
-    margin: 0 auto;
-  }
-
+  
   &__header {
     margin-bottom: 6rem;
   }
 
-  &__tagline{
-    width: 60%;
-    background-color: blue;
-  }
+
 
   &__title {
     font-size: 3.2rem;
